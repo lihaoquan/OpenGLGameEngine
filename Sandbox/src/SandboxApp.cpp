@@ -10,10 +10,9 @@ public:
 	~Sandbox() {
 			
 	}
-
 };
 
 Engine::Application* Engine::CreateApplication() {
-	printf("Application Created");
+
 	return new Sandbox();
 }
