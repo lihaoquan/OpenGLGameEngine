@@ -1,9 +1,6 @@
 #pragma once
-
+#include "egpch.h"
 #include "Engine/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Engine {
 
@@ -38,7 +35,8 @@ namespace Engine {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class ENGINE_API Event {
+	class ENGINE_API Event 
+	{
 		// EventDispatcher class can have special access to Event functions and variables when declared as a friend class
 		friend class EventDispatcher;
 
@@ -62,7 +60,8 @@ namespace Engine {
 	// Dispatches event by matching its type. If it receives an event that is not its target type, it will ignore it
 	// If event received matches its type, it will execute that function and set that m_Handled to be true so that this
 	// event will not be further propagated to other layers
-	class EventDispatcher {
+	class EventDispatcher 
+	{
 		template<typename T>
 		// Declaring EventFn as an empty function that is expected to return a boolean
 		using EventFn = std::function<bool(T&)>;

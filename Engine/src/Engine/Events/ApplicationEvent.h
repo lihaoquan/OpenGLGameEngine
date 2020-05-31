@@ -2,10 +2,9 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Engine {
-	class ENGINE_API WindowResizeEvent : public Event {
+	class ENGINE_API WindowResizeEvent : public Event 
+	{
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
 			: m_Width(width), m_Height(height) {}
@@ -13,7 +12,8 @@ namespace Engine {
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const{ return m_Height; }
 
-		std::string ToString() const override {
+		std::string ToString() const override 
+		{
 			std::stringstream ss;
 			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;
 			return ss.str();
@@ -26,7 +26,8 @@ namespace Engine {
 		unsigned int m_Height;
 	};
 
-	class ENGINE_API WindowCloseEvent : public Event {
+	class ENGINE_API WindowCloseEvent : public Event 
+	{
 	public:
 		WindowCloseEvent() {}
 
@@ -34,7 +35,8 @@ namespace Engine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class ENGINE_API AppTickEvent : public Event {
+	class ENGINE_API AppTickEvent : public Event 
+	{
 	public:
 		AppTickEvent() {}
 		
@@ -42,7 +44,8 @@ namespace Engine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class ENGINE_API AppUpdateEvent : public Event {
+	class ENGINE_API AppUpdateEvent : public Event 
+	{
 	public:
 		AppUpdateEvent() {}
 
@@ -50,7 +53,8 @@ namespace Engine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class ENGINE_API AppRenderEvent : public Event {
+	class ENGINE_API AppRenderEvent : public Event 
+	{
 	public:
 		AppRenderEvent() {}
 

@@ -6,7 +6,8 @@
 extern Engine::Application* Engine::CreateApplication();
 
 // Get number of command line arguments as well as the arguments themselves
-int main(int argc, char** argv) {
+int main(int argc, char** argv) 
+{
 
 	Engine::Log::Init();
 	EG_CORE_WARN("Engine Logger Initialized!");

@@ -1,6 +1,7 @@
 #include <Engine.h>
 
-class Sandbox : public Engine::Application {
+class Sandbox : public Engine::Application 
+{
 
 public:
 	Sandbox() {
@@ -12,7 +13,8 @@ public:
 	}
 };
 
-Engine::Application* Engine::CreateApplication() {
+Engine::Application* Engine::CreateApplication() 
+{
 
 	return new Sandbox();
 }
